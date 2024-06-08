@@ -54,3 +54,6 @@ app.*.map.json
 # Android signing key
 android/key.properties
 android/key.jks
+
+# FVM Version Cache
+.fvm/
