@@ -40,36 +40,17 @@ if (versionPropertiesFile.exists()) {
   }
 }
 
-def freeVersionCode = versionProperties.getProperty('freeVersionCode')
-def freeVersionName = versionProperties.getProperty('freeVersionName')
-
-def proVersionCode = versionProperties.getProperty('proVersionCode')
-def proVersionName = versionProperties.getProperty('proVersionName')
-
 apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-  compileSdk 33
+  compileSdk 34
 
   defaultConfig {
     minSdk 21
-    targetSdk 31
-  }
-
-  flavorDimensions "app"
-
-  productFlavors {
-    free {
-      applicationId "com.robertodoering.harpy.free"
-      versionCode freeVersionCode.toInteger()
-      versionName freeVersionName
-    }
-    pro {
-      applicationId "com.robertodoering.harpy.pro"
-      versionCode proVersionCode.toInteger()
-      versionName proVersionName
-    }
+    targetSdk 34
+    versionCode flutterVersionCode.toInteger()
+    versionName flutterVersionName 
   }
 
   lint {
