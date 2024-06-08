@@ -100,29 +100,11 @@ class _AboutButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Align(
       alignment: AlignmentDirectional.topEnd,
-      child: RbyPopupMenuButton(
-        onSelected: (value) {
-          switch (value) {
-            case 0:
-              context.pushNamed(AboutPage.name);
-              break;
-            case 1:
-              context.pushNamed(CustomApiPage.name);
-              break;
-          }
+      child: IconButton(
+        onPressed: () {
+          context.pushNamed(AboutPage.name);
         },
-        itemBuilder: (_) => const [
-          RbyPopupMenuListTile(
-            value: 0,
-            leading: Icon(Icons.info_outline_rounded),
-            title: Text('about'),
-          ),
-          RbyPopupMenuListTile(
-            value: 1,
-            leading: Icon(CupertinoIcons.slider_horizontal_3),
-            title: Text('custom api key'),
-          ),
-        ],
+        icon: const Icon(Icons.info_outline_rounded)
       ),
     );
   }
@@ -181,7 +163,7 @@ class _LoginButton extends StatelessWidget {
       duration: const Duration(milliseconds: 1200),
       curve: Curves.elasticOut,
       child: RbyButton.elevated(
-        label: const Text('login with Twitter'),
+        label: const Text('login with Bluesky'),
         onTap: onTap,
       ),
     );
