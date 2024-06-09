@@ -45,17 +45,17 @@ class _Login with LoggerMixin {
     _ref.read(authenticationStateProvider.notifier).state =
         const AuthenticationState.unauthenticated();
 
-    showDialog(context: context, builder: (c) {
+    unawaited(showDialog(context: context, builder: (c) {
       return RbyDialog(
-        title: Text("login"),
+        title: const Text("login"),
         content: Column(children: [
-          TextField(decoration: InputDecoration(hintText: "handle or email"),),
+          const TextField(decoration: InputDecoration(hintText: "handle or email"),),
           VerticalSpacer.normal,
-          TextField(decoration: InputDecoration(hintText: "app password"),),
+          const TextField(decoration: InputDecoration(hintText: "app password"),),
           VerticalSpacer.normal,
           RbyButton.text(onTap: (){}, label: Text("login with Bluesky"),)
         ],));
-    });
+    }));
 
     final result = null;
 
