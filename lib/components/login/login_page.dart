@@ -30,8 +30,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     HapticFeedback.mediumImpact().ignore();
     setState(() => _loginStarted = true);
 
-    await Future<void>.delayed(theme.animation.long);
-    await ref.read(loginProvider).login();
+    await ref.read(loginProvider).login(context);
 
     setState(() => _loginStarted = false);
   }
@@ -49,11 +48,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           child: CircularProgressIndicator(),
         ),
         authenticated: (_) => const SizedBox(),
-        unauthenticated: () => AnimatedSlide(
-          duration: theme.animation.long,
-          curve: Curves.easeInCubic,
-          offset: _loginStarted ? const Offset(0, -1) : Offset.zero,
-          child: Stack(
+        unauthenticated: () => Stack(
             children: [
               const _AboutButton(),
               Column(
@@ -88,8 +83,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
