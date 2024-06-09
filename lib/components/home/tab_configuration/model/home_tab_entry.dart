@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 part 'home_tab_entry.freezed.dart';
 part 'home_tab_entry.g.dart';

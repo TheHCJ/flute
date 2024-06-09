@@ -1,8 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dart_twitter_api/twitter_api.dart' as v1;
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 
 part 'media_data.freezed.dart';
 

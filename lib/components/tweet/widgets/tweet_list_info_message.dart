@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 
 /// Builds an [icon] and [text] in a row with padding for the icon that matches

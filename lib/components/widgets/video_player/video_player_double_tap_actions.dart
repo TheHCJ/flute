@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 class VideoPlayerDoubleTapActions extends StatefulWidget {
   const VideoPlayerDoubleTapActions({

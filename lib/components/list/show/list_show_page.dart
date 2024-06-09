@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 
 /// Shows an overview of available Twitter lists for the [handle].
 class ListShowPage extends StatelessWidget {

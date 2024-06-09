@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_banner.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/pages/user/widgets/user_page_banner.dart';
 import 'package:rby/rby.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 

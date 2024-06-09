@@ -1,6 +1,6 @@
 import 'package:dart_twitter_api/twitter_api.dart' as v1;
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/api/api.dart';
+import 'package:flute/api/api.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart' as v2;
 
 part 'user_data.freezed.dart';

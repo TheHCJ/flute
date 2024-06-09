@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 /// A [TextEditingController] for the compose screen.
 class ComposeTextController extends TextEditingController {

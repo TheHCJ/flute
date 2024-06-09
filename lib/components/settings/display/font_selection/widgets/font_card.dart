@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 
 class FontCard extends StatelessWidget {

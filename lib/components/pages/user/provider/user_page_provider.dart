@@ -1,8 +1,8 @@
 import 'package:dart_twitter_api/twitter_api.dart' as v1;
 import 'package:flutter/widgets.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart' as v2;

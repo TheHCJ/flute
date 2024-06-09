@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 

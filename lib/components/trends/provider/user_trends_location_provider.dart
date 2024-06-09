@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 /// Provides the [TrendsLocationData] that is saved in the preferences.
 final userTrendsLocationProvider = Provider(

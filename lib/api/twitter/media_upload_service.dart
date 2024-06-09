@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/core/core.dart';
 import 'package:mime_type/mime_type.dart';
 
 final mediaUploadService = Provider(

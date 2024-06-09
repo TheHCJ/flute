@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 /// A [LoadingError] widget as a sliver that fills the remaining space in the
 /// viewport.

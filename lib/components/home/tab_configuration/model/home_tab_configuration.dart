@@ -1,7 +1,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 
 part 'home_tab_configuration.freezed.dart';
 part 'home_tab_configuration.g.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_app_bar.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_avatar.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_header.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_tab_view.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/pages/user/widgets/user_page_app_bar.dart';
+import 'package:flute/components/pages/user/widgets/user_page_avatar.dart';
+import 'package:flute/components/pages/user/widgets/user_page_header.dart';
+import 'package:flute/components/pages/user/widgets/user_page_tab_view.dart';
 import 'package:rby/rby.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 

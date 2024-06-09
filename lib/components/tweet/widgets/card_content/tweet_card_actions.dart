@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/tweet/widgets/button/replies_button.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/tweet/widgets/button/replies_button.dart';
 
 class TweetCardActions extends ConsumerWidget {
   const TweetCardActions({

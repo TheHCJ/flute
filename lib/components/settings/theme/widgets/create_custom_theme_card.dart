@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 
 class CreateCustomThemeCard extends StatelessWidget {

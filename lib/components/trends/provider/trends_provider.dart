@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 
 final trendsProvider = StateNotifierProvider.autoDispose<TrendsNotifier,

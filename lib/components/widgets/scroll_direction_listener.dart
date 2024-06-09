@@ -1,7 +1,7 @@
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 /// Scroll direction changes will only be updated if the affected scroll view
 /// has a `maxScrollExtent` of this threshold.

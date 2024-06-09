@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
+import 'package:flute/api/api.dart';
 
 final translateServiceProvider = Provider(
   (ref) => TranslateService(),

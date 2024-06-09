@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:harpy/components/changelog/widget/changelog_widget.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/changelog/widget/changelog_widget.dart';
+import 'package:flute/components/components.dart';
 
 import '../../test_setup/data/changelog_data.dart';
 import '../../test_setup/setup.dart';

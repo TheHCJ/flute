@@ -1,9 +1,9 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_header.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/pages/user/widgets/user_page_header.dart';
 
 import '../../../test_setup/data/user_data.dart';
 import '../../../test_setup/setup.dart';

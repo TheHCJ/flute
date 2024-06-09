@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 import 'package:http/http.dart';
 import 'package:logging/logging.dart';
 import 'package:rby/rby.dart';

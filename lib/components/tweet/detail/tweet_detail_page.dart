@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/tweet/detail/provider/tweet_detail_provider.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/tweet/detail/provider/tweet_detail_provider.dart';
 import 'package:rby/rby.dart';
 
 class TweetDetailPage extends ConsumerStatefulWidget {

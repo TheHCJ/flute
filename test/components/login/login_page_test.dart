@@ -2,7 +2,7 @@ import 'package:flare_flutter/flare_testing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 import '../../test_setup/setup.dart';
 

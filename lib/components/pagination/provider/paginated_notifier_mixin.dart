@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 part 'paginated_notifier_mixin.freezed.dart';
 

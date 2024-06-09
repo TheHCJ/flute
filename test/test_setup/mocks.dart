@@ -2,8 +2,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dart_twitter_api/twitter_api.dart' as v1;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart' as v2;
 

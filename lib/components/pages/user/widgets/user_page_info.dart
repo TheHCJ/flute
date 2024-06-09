@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_avatar.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/pages/user/widgets/user_page_avatar.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 
 class UserPageInfo extends StatelessWidget {

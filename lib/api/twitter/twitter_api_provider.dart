@@ -1,7 +1,7 @@
 import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/misc/environment.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/misc/environment.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart' as v2;
 
 final twitterApiV1Provider = Provider(

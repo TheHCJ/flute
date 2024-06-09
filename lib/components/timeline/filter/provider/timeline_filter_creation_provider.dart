@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/core/core.dart';
 
 final timelineFilterCreationProvider = StateNotifierProvider.autoDispose
     .family<TimelineFilterCreationNotifier, TimelineFilter, TimelineFilter>(

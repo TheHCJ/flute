@@ -1,5 +1,5 @@
 import 'package:built_collection/built_collection.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 final changelogFull = ChangelogData(
   title: 'Version header',

@@ -2,7 +2,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 
 /// Builds a list of predetermined trends locations that are provided by

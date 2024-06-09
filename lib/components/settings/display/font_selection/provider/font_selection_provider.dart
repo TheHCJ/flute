@@ -2,7 +2,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 final fontSelectionProvider =
     StateNotifierProvider.autoDispose<FontSelectionNotifier, BuiltList<String>>(

@@ -3,8 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 
 /// A dialog that uses the [PostTweetNotifier] to post a tweet.

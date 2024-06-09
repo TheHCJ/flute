@@ -2,7 +2,7 @@ import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:go_router/go_router.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:rby/rby.dart';
 

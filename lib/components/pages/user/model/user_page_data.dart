@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/api/api.dart';
+import 'package:flute/api/api.dart';
 
 part 'user_page_data.freezed.dart';
 

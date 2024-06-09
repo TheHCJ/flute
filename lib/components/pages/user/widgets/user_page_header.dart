@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/components/components.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_connections.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_description_translation.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_info.dart';
-import 'package:harpy/components/pages/user/widgets/user_page_metadata.dart';
+import 'package:flute/components/components.dart';
+import 'package:flute/components/pages/user/widgets/user_page_connections.dart';
+import 'package:flute/components/pages/user/widgets/user_page_description_translation.dart';
+import 'package:flute/components/pages/user/widgets/user_page_info.dart';
+import 'package:flute/components/pages/user/widgets/user_page_metadata.dart';
 import 'package:rby/rby.dart';
 
 class UserPageHeader extends StatelessWidget {

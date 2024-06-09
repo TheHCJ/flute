@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 
 /// Mixin for video player overlays that show an icon in the center depending

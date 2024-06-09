@@ -1,5 +1,5 @@
-import 'package:harpy/api/api.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/core/core.dart';
 
 /// Parses hashtags and user mentions from the [text].
 EntitiesData parseEntities(String text) {

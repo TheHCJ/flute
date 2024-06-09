@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 class ListTimeline extends StatelessWidget {
   const ListTimeline({

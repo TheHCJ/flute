@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_image/flutter_image.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';

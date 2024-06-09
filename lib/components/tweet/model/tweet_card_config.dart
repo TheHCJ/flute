@@ -1,4 +1,4 @@
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 class TweetCardConfig {
   const TweetCardConfig({

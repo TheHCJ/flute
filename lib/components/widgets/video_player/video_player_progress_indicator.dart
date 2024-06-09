@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerProgressIndicator extends StatelessWidget {

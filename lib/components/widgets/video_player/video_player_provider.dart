@@ -2,7 +2,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wakelock/wakelock.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 final messageServiceProvider = Provider(
   (ref) => MessageService(ref: ref),

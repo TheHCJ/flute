@@ -1,6 +1,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
+import 'package:flute/api/api.dart';
 
 final retweetersProvider =
     FutureProvider.autoDispose.family<BuiltList<UserData>, String>(

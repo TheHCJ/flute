@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/api/api.dart';
+import 'package:flute/api/api.dart';
 
 part 'media_timeline_entry.freezed.dart';
 

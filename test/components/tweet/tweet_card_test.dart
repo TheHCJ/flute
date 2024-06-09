@@ -1,8 +1,8 @@
 import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 
 import '../../test_setup/data/user_data.dart';
 import '../../test_setup/setup.dart';

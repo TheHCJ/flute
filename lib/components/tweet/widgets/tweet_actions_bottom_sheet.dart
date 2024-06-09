@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 
 void showTweetActionsBottomSheet(

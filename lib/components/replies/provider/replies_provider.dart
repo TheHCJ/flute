@@ -2,8 +2,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:dart_twitter_api/twitter_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
 
 part 'replies_provider.freezed.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 /// Starts initialization for a video player when the child becomes visible.
 ///

@@ -1,4 +1,4 @@
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 
 const predefinedThemes = [
   _crow, // 0 -> default dark theme

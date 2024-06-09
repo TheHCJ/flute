@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:harpy/core/core.dart';
+import 'package:flute/core/core.dart';
 import 'package:logging/logging.dart';
 
 /// The count of weighted characters for a tweet.

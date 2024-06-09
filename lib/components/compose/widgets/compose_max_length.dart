@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/api/api.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/api/api.dart';
+import 'package:flute/components/components.dart';
 
 /// Builds the count of weighted tweet characters in the composed tweet with the
 /// max length of 280 characters.

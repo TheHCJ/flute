@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:harpy/components/components.dart';
+import 'package:flute/components/components.dart';
 
 // NOTE: "Following users" are also referred to as "friends" in the twitter api.
 class FollowingPage extends StatelessWidget {
