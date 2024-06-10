@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flute/api/api.dart';
+import 'package:flute/;
 import 'package:flute/components/components.dart';
 import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';
@@ -82,7 +83,7 @@ class Authentication with LoggerMixin {
 
     dynamic error;
 
-    final user = await twitterApi.userService
+    final user = await bsy
         .usersShow(userId: userDid)
         .then(UserData.fromV1)
         .handleError((e, st) {
