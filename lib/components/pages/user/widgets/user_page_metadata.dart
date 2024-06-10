@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flute/api/twitter/data/entities_data.dart';
+import 'package:flute/api/bluesky/data/entities_data.dart';
 import 'package:flute/components/components.dart';
 import 'package:rby/rby.dart';
 

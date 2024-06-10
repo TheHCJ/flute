@@ -65,6 +65,46 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  at_identifier:
+    dependency: transitive
+    description:
+      name: at_identifier
+      sha256: "4349b74a7597273d67a5f6646e832010af70bc50d959d15723c1f446273ad6bf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  at_uri:
+    dependency: transitive
+    description:
+      name: at_uri
+      sha256: c21da2f39966cfef1a49d6cfb13277976d888d680b11786770748db91db958e5
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  atproto:
+    dependency: transitive
+    description:
+      name: atproto
+      sha256: "18d8715dec551d89ecd3db35d27b74def8fa2302261ba846b11d17a785fa9e5e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.2"
+  atproto_core:
+    dependency: transitive
+    description:
+      name: atproto_core
+      sha256: a4efeeb63c980e3b5e035634f3e2b41590111f8f53e35284829ddbd84cf19b08
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.2"
+  bluesky:
+    dependency: "direct main"
+    description:
+      name: bluesky
+      sha256: "2428d9311630d6155b3be3f9fdf26fcabc206138993077e3fd9e5caebf5fde80"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -589,10 +629,10 @@ packages:
     dependency: "direct main"
     description:
       name: http
-      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.6"
+    version: "1.1.0"
   http_multi_server:
     dependency: transitive
     description:
@@ -769,6 +809,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
+  nsid:
+    dependency: transitive
+    description:
+      name: nsid
+      sha256: ce5f1866237778fc3267397d835ebea05df7f66103c8c610ef8f97191ef6df46
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
   oauth1:
     dependency: transitive
     description:
@@ -1626,6 +1674,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.3.0"
+  xrpc:
+    dependency: transitive
+    description:
+      name: xrpc
+      sha256: f602266eba1c78f59723f83ba788f8acf55f5d2ae9e2410528e085fb7ee02d0c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.4"
   yaml:
     dependency: transitive
     description:

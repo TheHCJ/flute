@@ -20,57 +20,57 @@ class AuthPreferencesNotifier extends StateNotifier<AuthPreferences> {
   })  : _preferences = preferences,
         super(
           AuthPreferences(
-            userToken: preferences.getString('userToken', ''),
-            userSecret: preferences.getString('userSecret', ''),
-            userId: preferences.getString('userId', ''),
+            userIdentifier: preferences.getString('userIdentifier', ''),
+            userPassword: preferences.getString('userPassword', ''),
+            userDid: preferences.getString('userDid', ''),
           ),
         );
 
   final Preferences _preferences;
 
   void setAuth({
-    required String token,
-    required String secret,
-    required String userId,
+    required String indentifier,
+    required String password,
+    required String userDid,
   }) {
     state = AuthPreferences(
-      userToken: token,
-      userSecret: secret,
-      userId: userId,
+      userIdentifier: indentifier,
+      userPassword: password,
+      userDid: userDid,
     );
 
     _preferences
-      ..setString('userToken', token)
-      ..setString('userSecret', secret)
-      ..setString('userId', userId);
+      ..setString('userIdentifier', indentifier)
+      ..setString('userPassword', password)
+      ..setString('userDid', userDid);
   }
 
   void clearAuth() {
     state = AuthPreferences.empty();
 
     _preferences
-      ..remove('userToken')
-      ..remove('userSecret')
-      ..remove('userId');
+      ..remove('userIdentifier')
+      ..remove('userPassword')
+      ..remove('userDid');
   }
 }
 
 @freezed
 class AuthPreferences with _$AuthPreferences {
   factory AuthPreferences({
-    required String userToken,
-    required String userSecret,
-    required String userId,
+    required String userIdentifier,
+    required String userPassword,
+    required String userDid,
   }) = _AuthPreferences;
 
   factory AuthPreferences.empty() => AuthPreferences(
-        userToken: '',
-        userSecret: '',
-        userId: '',
+        userIdentifier: '',
+        userPassword: '',
+        userDid: '',
       );
 
   AuthPreferences._();
 
   late final bool isValid =
-      userToken.isNotEmpty && userSecret.isNotEmpty && userId.isNotEmpty;
+      userIdentifier.isNotEmpty && userPassword.isNotEmpty && userDid.isNotEmpty;
 }

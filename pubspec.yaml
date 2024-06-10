@@ -12,6 +12,7 @@ environment:
 dependencies:
   android_path_provider: ^0.3.0
   any_link_preview: ^3.0.0
+  bluesky: ^0.5.4
   built_collection: ^5.1.1
   collection: ^1.15.0
   connectivity_plus: ^4.0.1
@@ -113,6 +114,7 @@ dev_dependencies:
 
 dependency_overrides:  
   intl: ^0.18.0
+  http: ^1.1.0
 
 flutter:
   uses-material-design: true

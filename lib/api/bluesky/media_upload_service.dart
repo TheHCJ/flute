@@ -1,24 +1,26 @@
 import 'dart:io';
 
 import 'package:dart_twitter_api/twitter_api.dart';
+import 'package:bluesky/bluesky.dart' as bsky;
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flute/api/api.dart';
 import 'package:flute/core/core.dart';
 import 'package:mime_type/mime_type.dart';
 
 final mediaUploadService = Provider(
-  (ref) => MediaUploadService(
-    twitterApi: ref.watch(twitterApiV1Provider),
+  (ref) => FutureBuilder(future: ref.watch(blueskyProvider), builder: (c, a) => MediaUploadService(
+    blueskySession: a.data,
   ),
   name: 'MediaUploadService',
-);
+));
 
 class MediaUploadService {
   const MediaUploadService({
-    required TwitterApi twitterApi,
-  }) : _twitterApi = twitterApi;
+    required bsky.Session blueskySession,
+  }) : _blueskySession = blueskySession;
 
-  final TwitterApi _twitterApi;
+  final bsky.Session _blueskySession;
 
   static const _maxChunkSize = 500000;
 

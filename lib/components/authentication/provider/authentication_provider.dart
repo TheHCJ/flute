@@ -49,7 +49,7 @@ class Authentication with LoggerMixin {
   Future<void> onLogin(AuthPreferences auth) async {
     log.fine('on login');
 
-    final user = await _initializeUser(auth.userId);
+    final user = await _initializeUser(auth.userDid);
 
     if (user != null) {
       log.info('authenticated user successfully initialized');
@@ -69,14 +69,6 @@ class Authentication with LoggerMixin {
   Future<void> onLogout() async {
     log.fine('on logout');
 
-    // invalidate token
-    _ref
-        .read(twitterApiV1Provider)
-        .client
-        .post(Uri.https('api.twitter.com', '1.1/oauth/invalidate_token'))
-        .handleError(logErrorHandler)
-        .ignore();
-
     // clear saved session
     _ref.read(authPreferencesProvider.notifier).clearAuth();
 
@@ -85,13 +77,13 @@ class Authentication with LoggerMixin {
   }
 
   /// Requests the [UserData] for the authenticated user.
-  Future<UserData?> _initializeUser(String userId) async {
-    final twitterApi = _ref.read(twitterApiV1Provider);
+  Future<UserData?> _initializeUser(String userDid) async {
+    final twitterApi = await _ref.read(blueskyProvider);
 
     dynamic error;
 
     final user = await twitterApi.userService
-        .usersShow(userId: userId)
+        .usersShow(userId: userDid)
         .then(UserData.fromV1)
         .handleError((e, st) {
       error = e;
@@ -105,7 +97,7 @@ class Authentication with LoggerMixin {
           .read(dialogServiceProvider)
           .show<bool>(child: const RetryAuthenticationDialog());
 
-      if (retry ?? false) return _initializeUser(userId);
+      if (retry ?? false) return _initializeUser(userDid);
     }
 
     return user;
