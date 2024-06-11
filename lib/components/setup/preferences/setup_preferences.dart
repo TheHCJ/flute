@@ -6,7 +6,7 @@ import 'package:rby/rby.dart';
 final setupPreferencesProvider = Provider(
   (ref) => SetupPreferences(
     preferences: ref.watch(
-      preferencesProvider(ref.watch(authPreferencesProvider).userId),
+      preferencesProvider(ref.watch(authPreferencesProvider).did),
     ),
   ),
   name: 'SetupPreferencesProvider',

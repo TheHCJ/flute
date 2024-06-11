@@ -10,7 +10,7 @@ final homeTabConfigurationProvider = StateNotifierProvider.autoDispose<
     HomeTabConfigurationNotifier, HomeTabConfiguration>(
   (ref) => HomeTabConfigurationNotifier(
     preferences: ref.watch(
-      preferencesProvider(ref.watch(authPreferencesProvider).userId),
+      preferencesProvider(ref.watch(authPreferencesProvider).did),
     ),
   ),
   name: 'HomeTabConfigurationProvider',

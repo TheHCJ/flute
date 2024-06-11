@@ -12,7 +12,7 @@ part 'theme_preferences.freezed.dart';
 final themePreferencesProvider =
     StateNotifierProvider<ThemePreferencesNotifier, ThemePreferences>(
   (ref) {
-    final prefix = ref.watch(authPreferencesProvider).userId;
+    final prefix = ref.watch(authPreferencesProvider).did;
 
     return ThemePreferencesNotifier(
       preferences: ref.watch(preferencesProvider(prefix)),

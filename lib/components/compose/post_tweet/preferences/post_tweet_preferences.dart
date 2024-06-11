@@ -13,7 +13,7 @@ final postTweetPreferencesProvider =
     StateNotifierProvider<PostTweetPreferencesNotifier, PostTweetPreferences>(
   (ref) => PostTweetPreferencesNotifier(
     preferences: ref.watch(
-      preferencesProvider(ref.watch(authPreferencesProvider).userId),
+      preferencesProvider(ref.watch(authPreferencesProvider).did),
     ),
   ),
   name: 'PostTweetPreferencesProvider',

@@ -7,7 +7,7 @@ import 'package:rby/rby.dart';
 final tweetVisibilityPreferencesProvider = Provider(
   (ref) => TweetVisibilityPreferences(
     preferences: ref.watch(
-      preferencesProvider(ref.watch(authPreferencesProvider).userId),
+      preferencesProvider(ref.watch(authPreferencesProvider).did),
     ),
     generalPreferences: ref.watch(generalPreferencesProvider),
   ),
