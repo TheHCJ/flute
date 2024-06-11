@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flute/api/api.dart';
-import 'package:flute/;
+import 'package:bluesky/bluesky.dart' as bsky;
 import 'package:flute/components/components.dart';
 import 'package:flute/core/core.dart';
 import 'package:rby/rby.dart';

@@ -9,11 +9,11 @@ import 'package:flute/core/core.dart';
 import 'package:mime_type/mime_type.dart';
 
 final mediaUploadService = Provider(
-  (ref) => FutureBuilder(future: ref.watch(blueskyProvider), builder: (c, a) => MediaUploadService(
-    blueskySession: a.data,
+  (ref) => MediaUploadService(
+    blueskySession: bsky.Session(),
   ),
   name: 'MediaUploadService',
-));
+);
 
 class MediaUploadService {
   const MediaUploadService({
