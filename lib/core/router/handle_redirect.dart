@@ -39,7 +39,6 @@ const _unprotectedRoutes = [
   SplashPage.path,
   LoginPage.path,
   AboutPage.path,
-  CustomApiPage.path,
 ];
 
 // - when navigating to the splash page don't redirect

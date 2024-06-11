@@ -48,17 +48,6 @@ final routesProvider = Provider(
         state: state,
         child: const LoginPage(),
       ),
-      routes: [
-        GoRoute(
-          name: CustomApiPage.name,
-          path: CustomApiPage.path, // 'custom_api'
-          pageBuilder: (_, state) => _createPage(
-            state: state,
-            fullscreenDialog: true,
-            child: const CustomApiPage(),
-          ),
-        ),
-      ],
     ),
     GoRoute(
       name: WebviewPage.name,

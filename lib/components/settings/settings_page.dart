@@ -106,9 +106,6 @@ class _OtherSettingsCard extends ConsumerWidget {
               orElse: () => false,
             );
 
-    final usingCustomApi =
-        ref.watch(customApiPreferencesProvider).hasCustomApiKeyAndSecret;
-
     return ExpansionCard(
       title: const Text('other'),
       children: [
@@ -128,27 +125,6 @@ class _OtherSettingsCard extends ConsumerWidget {
             title: Text('open Twitter links'),
             subtitle: Text('allow harpy to open Twitter links'),
             onTap: showOpenByDefault,
-          ),
-        if (!usingCustomApi)
-          RbyListTile(
-            leading: const Icon(FeatherIcons.twitter),
-            title: const Text('use custom api key'),
-            subtitle: const Text(
-              'connect to Twitter with your own api credentials',
-            ),
-            onTap: () async {
-              final result = await showDialog<bool>(
-                context: context,
-                builder: (_) => const CustomApiDialog(),
-              );
-
-              if (result ?? false) {
-                ref
-                    .read(logoutProvider)
-                    .logout(target: CustomApiPage.name)
-                    .ignore();
-              }
-            },
           ),
       ],
     );
