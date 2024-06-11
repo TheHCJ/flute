@@ -12,7 +12,6 @@ export 'bluesky/data/user_data.dart';
 export 'bluesky/find_post_replies.dart';
 export 'bluesky/handle_posts.dart';
 export 'bluesky/media_type.dart';
-export 'bluesky/media_upload_service.dart';
 export 'bluesky/media_video_converter.dart';
 export 'bluesky/parse_entities.dart';
 export 'bluesky/tweet_text_count.dart';

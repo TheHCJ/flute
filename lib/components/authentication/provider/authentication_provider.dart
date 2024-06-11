@@ -50,7 +50,7 @@ class Authentication with LoggerMixin {
   Future<void> onLogin(AuthPreferences auth) async {
     log.fine('on login');
 
-    final user = await _initializeUser(auth.userDid);
+    final user = await _initializeUser(auth.did);
 
     if (user != null) {
       log.info('authenticated user successfully initialized');

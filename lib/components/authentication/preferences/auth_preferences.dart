@@ -20,57 +20,75 @@ class AuthPreferencesNotifier extends StateNotifier<AuthPreferences> {
   })  : _preferences = preferences,
         super(
           AuthPreferences(
-            userIdentifier: preferences.getString('userIdentifier', ''),
-            userPassword: preferences.getString('userPassword', ''),
-            userDid: preferences.getString('userDid', ''),
+            accessJwt: preferences.getString('accessJwt', ''),
+            did: preferences.getString('did', ''),
+            email: preferences.getString('email', ''),
+            handle: preferences.getString('handle', ''),
+            refreshJwt: preferences.getString('refreshJwt', ''),
           ),
         );
 
   final Preferences _preferences;
 
   void setAuth({
-    required String indentifier,
-    required String password,
-    required String userDid,
+    required String accessJwt,
+    required String did,
+    required String? email,
+    required String handle,
+    required String refreshJwt,
   }) {
     state = AuthPreferences(
-      userIdentifier: indentifier,
-      userPassword: password,
-      userDid: userDid,
+      accessJwt: accessJwt,
+        did: did,
+        email: email,
+        handle: handle,
+        refreshJwt: refreshJwt
     );
 
     _preferences
-      ..setString('userIdentifier', indentifier)
-      ..setString('userPassword', password)
-      ..setString('userDid', userDid);
+      ..setString('accessJwt', accessJwt)
+      ..setString('did', did)
+      ..setString('email', email ?? '')
+      ..setString('handle', handle)
+      ..setString('refreshJwt', refreshJwt);
   }
 
   void clearAuth() {
     state = AuthPreferences.empty();
 
     _preferences
-      ..remove('userIdentifier')
-      ..remove('userPassword')
-      ..remove('userDid');
+      ..remove('accessJwt')
+      ..remove('did')
+      ..remove('email')
+      ..remove('handle')
+      ..remove('refreshJwt');
   }
 }
 
 @freezed
 class AuthPreferences with _$AuthPreferences {
   factory AuthPreferences({
-    required String userIdentifier,
-    required String userPassword,
-    required String userDid,
+    required String accessJwt,
+    required String did,
+    required String? email,
+    required String handle,
+    required String refreshJwt,
   }) = _AuthPreferences;
 
   factory AuthPreferences.empty() => AuthPreferences(
-        userIdentifier: '',
-        userPassword: '',
-        userDid: '',
+        accessJwt: '',
+        did: '',
+        email: '',
+        handle: '',
+        refreshJwt: ''
       );
 
   AuthPreferences._();
 
   late final bool isValid =
-      userIdentifier.isNotEmpty && userPassword.isNotEmpty && userDid.isNotEmpty;
+      accessJwt.isNotEmpty 
+      && did.isNotEmpty 
+      && email != null 
+      && handle.isNotEmpty 
+      && refreshJwt.isNotEmpty;
 }

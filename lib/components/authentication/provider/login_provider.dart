@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bluesky/bluesky.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flute/api/api.dart';
@@ -45,15 +46,32 @@ class _Login with LoggerMixin {
     _ref.read(authenticationStateProvider.notifier).state =
         const AuthenticationState.unauthenticated();
 
+    final serviceField = TextEditingController(text: 'https://bsky.social');
+    final identifierField = TextEditingController();
+    final passwordField = TextEditingController();
+
     unawaited(showDialog(context: context, builder: (c) {
       return RbyDialog(
         title: const Text("login"),
         content: Column(children: [
-          const TextField(decoration: InputDecoration(hintText: "handle or email"),),
+          TextField(controller: serviceField, decoration: const InputDecoration(hintText: "handle or email"),),
           VerticalSpacer.normal,
-          const TextField(decoration: InputDecoration(hintText: "app password"),),
+          TextField(controller: identifierField, decoration: const InputDecoration(hintText: "handle or email"),),
           VerticalSpacer.normal,
-          RbyButton.text(onTap: (){}, label: Text("login with Bluesky"),)
+          TextField(controller: passwordField, decoration: const InputDecoration(hintText: "app password"),),
+          VerticalSpacer.normal,
+          RbyButton.text(onTap: () async{
+            final session = await createSession(service: serviceField.text, identifier: identifierField.text, password: passwordField.text);
+            print(session.data);
+            
+            _ref.read(authPreferencesProvider.notifier).setAuth(
+              accessJwt: session.data.accessJwt,
+              did: session.data.did,
+              email: session.data.email,
+              handle: session.data.handle,
+              refreshJwt: session.data.refreshJwt,
+            );
+          }, label: Text("login with Bluesky"),)
         ],));
     }));
 
@@ -63,11 +81,7 @@ class _Login with LoggerMixin {
       success: (token, secret, userId) async {
         log.fine('successfully authenticated');
 
-        _ref.read(authPreferencesProvider.notifier).setAuth(
-              token: "",
-              secret: "secret",
-              userId: "userId",
-            );
+        
 
         await _ref
             .read(authenticationProvider)

@@ -8,9 +8,14 @@ final blueskyProvider = Provider(
   (ref) async {
     final authPreferences = ref.watch(authPreferencesProvider);
 
-    return bsky.createSession(
-      identifier: authPreferences.userIdentifier, 
-      password: authPreferences.userPassword
+    return bsky.Bluesky.fromSession(
+      bsky.Session(
+        accessJwt: authPreferences.accessJwt, 
+        did: authPreferences.did, 
+        handle: authPreferences.handle, 
+        email: authPreferences.email, 
+        refreshJwt: authPreferences.refreshJwt,
+      )
     );
   },
 );
