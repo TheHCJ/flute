@@ -13,7 +13,7 @@ final listShowProvider = StateNotifierProvider.autoDispose
   (ref, handle) => ListShowNotifier(
     handle: handle,
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'ListShowProvider',
 );
@@ -22,10 +22,10 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
   ListShowNotifier({
     required String handle,
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _handle = handle,
         _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(const ListShowState.loading()) {
     load();
   }
@@ -33,7 +33,7 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
   final String _handle;
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> load() async {
     log.fine('loading lists');
@@ -43,7 +43,7 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
     PaginatedTwitterLists? paginatedOwnerships;
     PaginatedTwitterLists? paginatedSubscriptions;
 
-    final responses = await Future.wait([
+    /* final responses = await Future.wait([
       _twitterApi.listsService.ownerships(screenName: _handle),
       _twitterApi.listsService.subscriptions(screenName: _handle),
     ]).handleError((e, st) => twitterErrorHandler(_ref, e, st));
@@ -52,6 +52,7 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
       paginatedOwnerships = responses[0];
       paginatedSubscriptions = responses[1];
     }
+    */
 
     BuiltList<TwitterListData>? ownerships;
     BuiltList<TwitterListData>? subscriptions;
@@ -107,8 +108,8 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
           .ownerships(
             screenName: _handle,
             cursor: currentState.ownershipsCursor,
-          )
-          .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+          );
+          /*.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
       if (paginatedOwnerships != null) {
         final newOwnerships =
@@ -131,6 +132,7 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
           subscriptionsCursor: currentState.subscriptionsCursor,
         );
       }
+      */
     }
   }
 
@@ -147,8 +149,8 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
           .subscriptions(
             screenName: _handle,
             cursor: currentState.subscriptionsCursor,
-          )
-          .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+          );
+          /*.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
       if (paginatedSubscriptions != null) {
         final newSubscriptions =
@@ -171,6 +173,7 @@ class ListShowNotifier extends StateNotifier<ListShowState> with LoggerMixin {
           subscriptionsCursor: null,
         );
       }
+      */
     }
   }
 }

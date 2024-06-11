@@ -19,7 +19,7 @@ final postTweetProvider =
     StateNotifierProvider<PostTweetNotifier, PostTweetState>(
   (ref) => PostTweetNotifier(
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'PostTweetProvider',
 );
@@ -27,13 +27,13 @@ final postTweetProvider =
 class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
   PostTweetNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(const PostTweetState.inProgress());
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> post(
     String text, {
@@ -79,15 +79,17 @@ class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
           e,
         );
         additionalInfo = message;
-      } else {
-        logErrorHandler(e, st);
       }
     });
 
     if (status != null) {
       state = PostTweetState.success(
         message: 'tweet sent successfully!',
-        tweet: status,
+        tweet: LegacyTweetData(createdAt: DateTime.now(), user: UserData(
+      id: 'actorData.data.did', 
+    name: 'actorData.data.displayName' ?? '',
+    handle: 'actorData.data.handle'
+    )),
       );
     } else {
       state = PostTweetState.error(
@@ -115,7 +117,7 @@ class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
       final friendships = await _twitterApi.userService
           .friendshipsLookup(screenNames: mentions);
 
-      final unrelatedMentionsCount = friendships
+      /* final unrelatedMentionsCount = friendships
           .map((friendship) => friendship.connections ?? <String>[])
           .where(
             (connections) =>
@@ -123,6 +125,8 @@ class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
                 !connections.contains('followed_by'),
           )
           .length;
+          */
+          final unrelatedMentionsCount = 0;
 
       final valid = _ref
           .read(postTweetPreferencesProvider.notifier)
@@ -180,7 +184,7 @@ class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
 
     try {
       for (var i = 0; i < mediaFiles.length; i++) {
-        state = PostTweetState.inProgress(
+        /* state = PostTweetState.inProgress(
           message: type.asMessage(i, mediaFiles.length > 1),
           additionalInfo: 'this may take a moment',
         );
@@ -191,6 +195,7 @@ class PostTweetNotifier extends StateNotifier<PostTweetState> with LoggerMixin {
             );
 
         if (mediaId != null) mediaIds.add(mediaId);
+        */
       }
 
       log.fine('${mediaIds.length} media uploaded');

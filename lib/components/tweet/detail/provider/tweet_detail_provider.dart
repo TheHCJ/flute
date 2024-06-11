@@ -7,30 +7,32 @@ final tweetDetailProvider = StateNotifierProvider.family
   name: 'TweetDetailProvider',
   (ref, id) => TweetDetailNotifier(
     id: id,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
 );
 
 class TweetDetailNotifier extends StateNotifier<AsyncValue<LegacyTweetData>> {
   TweetDetailNotifier({
     required String id,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _id = id,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(const AsyncValue.loading());
 
   final String _id;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> load([LegacyTweetData? tweet]) async {
     if (tweet != null) {
       state = AsyncData(tweet);
     } else {
+      /*
       state = await AsyncValue.guard(
         () => _twitterApi.tweetService
             .show(id: _id)
             .then(LegacyTweetData.fromTweet),
       );
+      */
     }
   }
 }

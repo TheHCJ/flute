@@ -13,7 +13,7 @@ final tweetSearchProvider =
     StateNotifierProvider.autoDispose<TweetSearchNotifier, TweetSearchState>(
   (ref) => TweetSearchNotifier(
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'TweetSearchProvider',
 );
@@ -22,13 +22,13 @@ class TweetSearchNotifier extends StateNotifier<TweetSearchState>
     with LoggerMixin {
   TweetSearchNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(const TweetSearchState.initial());
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> search({
     String? customQuery,
@@ -54,23 +54,23 @@ class TweetSearchNotifier extends StateNotifier<TweetSearchState>
         .then(
           (result) =>
               result.statuses?.map(LegacyTweetData.fromTweet).toBuiltList(),
-        )
-        .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+        );
+        //.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
     if (tweets != null) {
-      if (tweets.isEmpty) {
-        log.fine('found no tweets for query: $query');
+      //if (tweets.isEmpty) {
+        //log.fine('found no tweets for query: $query');
 
-        state = TweetSearchState.noData(query: query, filter: filter);
-      } else {
+        //state = TweetSearchState.noData(query: query, filter: filter);
+//} else {
         log.fine('found ${tweets.length} tweets for query: $query');
 
-        state = TweetSearchState.data(
-          tweets: tweets,
-          query: query,
-          filter: filter,
-        );
-      }
+        //state = TweetSearchState.data(
+          //tweets: tweets,
+          //query: query,
+          //filter: filter,
+        //);
+      //}
     } else {
       state = TweetSearchState.error(query: query, filter: filter);
     }

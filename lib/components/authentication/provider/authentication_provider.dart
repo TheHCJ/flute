@@ -79,17 +79,24 @@ class Authentication with LoggerMixin {
 
   /// Requests the [UserData] for the authenticated user.
   Future<UserData?> _initializeUser(String userDid) async {
-    final twitterApi = await _ref.read(blueskyProvider);
+    final bluesky = await _ref.read(blueskyProvider);
+    final authPreferences = _ref.watch(authPreferencesProvider);
 
     dynamic error;
 
-    final user = await bsy
+    /* final user = await bsy
         .usersShow(userId: userDid)
-        .then(UserData.fromV1)
+        .then(UserData)
         .handleError((e, st) {
       error = e;
-      logErrorHandler(e, st);
     });
+    */
+    final actorData = await bluesky.actors.findProfile(actor: authPreferences.did);
+    final user = UserData(
+      id: actorData.data.did, 
+    name: actorData.data.displayName ?? '',
+    handle: actorData.data.handle
+    );
 
     if (error is TimeoutException || error is SocketException) {
       // unable to authenticate user, allow to retry in case of temporary

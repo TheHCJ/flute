@@ -16,7 +16,7 @@ final legacyUserConnectionsProvider = StateNotifierProvider.autoDispose.family<
   (ref, handles) => LegacyUserConnectionsNotifier(
     ref: ref,
     handles: handles,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'UserConnectionsProvider',
 );
@@ -27,19 +27,19 @@ class LegacyUserConnectionsNotifier
   LegacyUserConnectionsNotifier({
     required Ref ref,
     required BuiltList<String> handles,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : assert(handles.isNotEmpty),
         _ref = ref,
         _handles = handles,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(BuiltMap());
 
   final Ref _ref;
   final BuiltList<String> _handles;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> load() async {
-    state = await _twitterApi.userService
+    /* state = await _twitterApi.userService
         .friendshipsLookup(screenNames: _handles.toList())
         .then(_mapConnections)
         .handleError(logErrorHandler)
@@ -47,6 +47,7 @@ class LegacyUserConnectionsNotifier
           (value) =>
               value ?? BuiltMap<String, BuiltSet<LegacyUserConnection>>(),
         );
+        */
   }
 
   Future<void> follow(String handle) async {
@@ -61,8 +62,8 @@ class LegacyUserConnectionsNotifier
 
     await _twitterApi.userService
         .friendshipsCreate(screenName: handle)
-        .handleError((e, st) {
-      twitterErrorHandler(_ref, e, st);
+        .handleError(() {
+      //twitterErrorHandler(_ref, e, st);
       if (!mounted) return;
 
       // assume still not following
@@ -88,7 +89,7 @@ class LegacyUserConnectionsNotifier
     await _twitterApi.userService
         .friendshipsDestroy(screenName: handle)
         .handleError((e, st) {
-      twitterErrorHandler(_ref, e, st);
+      //twitterErrorHandler(_ref, e, st);
       if (!mounted) return;
 
       // assume still following

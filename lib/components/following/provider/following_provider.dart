@@ -9,7 +9,7 @@ final followingProvider = StateNotifierProvider.autoDispose
     .family<FollowingNotifier, PaginatedState<BuiltList<UserData>>, String>(
   (ref, handle) => FollowingNotifier(
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
     handle: handle,
   ),
   name: 'FollowingProvider',
@@ -18,17 +18,17 @@ final followingProvider = StateNotifierProvider.autoDispose
 class FollowingNotifier extends PaginatedUsersNotifier {
   FollowingNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
     required String handle,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         _handle = handle,
         super(const PaginatedState.loading()) {
     loadInitial();
   }
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
   final String _handle;
 
   @override
@@ -37,11 +37,13 @@ class FollowingNotifier extends PaginatedUsersNotifier {
 
   @override
   Future<PaginatedUsers> request([int? cursor]) {
-    return _twitterApi.userService.friendsList(
+    /* return _twitterApi.userService.friendsList(
       screenName: _handle,
       cursor: cursor,
       skipStatus: true,
       count: 200,
-    );
+    ); 
+    */
+    return Future(() => PaginatedUsers());
   }
 }

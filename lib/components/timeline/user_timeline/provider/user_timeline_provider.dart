@@ -12,7 +12,7 @@ final userTimelineProvider = StateNotifierProvider.autoDispose
 
     return UserTimelineNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
       userId: userId,
     );
   },

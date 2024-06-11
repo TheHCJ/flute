@@ -163,7 +163,7 @@ class _MutedButton extends StatelessWidget {
             RbyButton.elevated(
               label: const Text('unmute'),
               onTap: () {
-                notifier.unmute().ignore();
+                //notifier.unmute().ignore();
                 Navigator.of(context).pop();
               },
             ),
@@ -222,7 +222,7 @@ class _RelationshipButton extends StatelessWidget {
           RbyButton.elevated(
             label: const Text('unblock'),
             onTap: () {
-              notifier.unblock().ignore();
+              //notifier.unblock().ignore();
               Navigator.of(context).pop();
             },
           ),
@@ -234,9 +234,9 @@ class _RelationshipButton extends StatelessWidget {
   void _toggleFollow() {
     HapticFeedback.lightImpact();
     if (relationship.following || relationship.followingRequested) {
-      notifier.unfollow();
+      //notifier.unfollow();
     } else {
-      notifier.follow();
+      //notifier.follow();
     }
   }
 

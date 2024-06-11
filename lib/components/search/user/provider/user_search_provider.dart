@@ -14,7 +14,7 @@ final userSearchProvider = StateNotifierProvider.autoDispose<UserSearchNotifier,
     PaginatedState<UsersSearchData>>(
   (ref) => UserSearchNotifier(
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'UserSearchProvider',
 );
@@ -23,13 +23,13 @@ class UserSearchNotifier extends StateNotifier<PaginatedState<UsersSearchData>>
     with RequestLock, LoggerMixin {
   UserSearchNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         super(const PaginatedState.initial());
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> _load({
     required String query,
@@ -43,21 +43,24 @@ class UserSearchNotifier extends StateNotifier<PaginatedState<UsersSearchData>>
           (users) => users.whereNot(
             (newUser) => oldUsers.any((oldUser) => newUser.id == oldUser.id),
           ),
-        )
-        .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+        );
+        //.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
     if (newUsers != null) {
       log.fine('found ${newUsers.length} new users');
 
+      /*
       final data = UsersSearchData(
         query: query,
         users: oldUsers.followedBy(newUsers).toBuiltList(),
       );
+      
 
       state = PaginatedState.data(
         data: data,
         cursor: newUsers.length > 5 ? cursor + 1 : null,
       );
+      */
     } else {
       if (oldUsers.isEmpty) {
         state = const PaginatedState.error();

@@ -12,7 +12,7 @@ final repliesProvider = StateNotifierProvider.autoDispose
     .family<RepliesNotifier, RepliesState, LegacyTweetData>(
   (ref, tweet) => RepliesNotifier(
     ref: ref,
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
     tweet: tweet,
   ),
   name: 'RepliesProvider',
@@ -21,17 +21,17 @@ final repliesProvider = StateNotifierProvider.autoDispose
 class RepliesNotifier extends StateNotifier<RepliesState> with LoggerMixin {
   RepliesNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
     required LegacyTweetData tweet,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         _tweet = tweet,
         super(const RepliesState.loading()) {
     load();
   }
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
   final LegacyTweetData _tweet;
 
   Future<void> load() async {
@@ -84,12 +84,12 @@ class RepliesNotifier extends StateNotifier<RepliesState> with LoggerMixin {
     LegacyTweetData tweet,
   ) async {
     final result = await _twitterApi.tweetSearchService
-        .findReplies(tweet)
-        .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+        .findReplies(tweet);
+        //.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
     if (result != null) {
       log.fine('found ${result.replies.length} replies');
-      return result.replies.toBuiltList();
+      //return result.replies.toBuiltList();
     } else {
       return null;
     }
@@ -103,7 +103,7 @@ class RepliesNotifier extends StateNotifier<RepliesState> with LoggerMixin {
           .then(LegacyTweetData.fromTweet)
           .handleError(logErrorHandler);
 
-      return parent;
+      //return parent;
     } else {
       return null;
     }

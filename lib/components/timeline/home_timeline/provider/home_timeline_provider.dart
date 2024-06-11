@@ -12,7 +12,7 @@ final homeTimelineProvider =
 
     return HomeTimelineNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
     );
   },
   name: 'HomeTimelineProvider',
@@ -21,7 +21,7 @@ final homeTimelineProvider =
 class HomeTimelineNotifier extends TimelineNotifier {
   HomeTimelineNotifier({
     required super.ref,
-    required super.twitterApi,
+    required super.bluesky,
   });
 
   @override
@@ -32,12 +32,14 @@ class HomeTimelineNotifier extends TimelineNotifier {
 
   @override
   Future<List<Tweet>> request({String? sinceId, String? maxId}) {
-    return twitterApi.timelineService.homeTimeline(
+    /* return twitterApi.timelineService.homeTimeline(
       count: 200,
       sinceId: sinceId,
       maxId: maxId,
       excludeReplies: filter?.excludes.replies,
     );
+    */
+    return Future(() => [Tweet()]);
   }
 
   @override

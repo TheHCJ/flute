@@ -12,7 +12,7 @@ final likesTimelineProvider = StateNotifierProvider.autoDispose
 
     return LikesTimelineNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
       userId: userId,
     );
   },
@@ -22,7 +22,7 @@ final likesTimelineProvider = StateNotifierProvider.autoDispose
 class LikesTimelineNotifier extends TimelineNotifier {
   LikesTimelineNotifier({
     required super.ref,
-    required super.twitterApi,
+    required super.bluesky,
     required String userId,
   }) : _userId = userId {
     // TODO: remove when refactoring timeline notifier

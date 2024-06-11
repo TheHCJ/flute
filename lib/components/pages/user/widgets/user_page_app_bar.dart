@@ -150,9 +150,9 @@ class _MoreButton extends StatelessWidget {
     if (value != null) {
       switch (value) {
         case _MoreAction.toggleMute:
-          return relationship.muting ? notifier.unmute() : notifier.mute();
+          //return relationship.muting ? notifier.unmute() : notifier.mute();
         case _MoreAction.toggleBlock:
-          return relationship.blocking ? notifier.unblock() : notifier.block();
+          //return relationship.blocking ? notifier.unblock() : notifier.block();
       }
     }
   }

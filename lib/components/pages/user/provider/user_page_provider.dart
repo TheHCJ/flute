@@ -14,17 +14,21 @@ class UserPageNotifier extends _$UserPageNotifier {
   late AuthenticationState _auth;
   late LanguagePreferences _languagePreferences;
   late TranslateService _translateService;
-  late v2.TwitterApi _twitterApiV2;
 
   @override
   Future<UserPageData> build(String handle) async {
     _auth = ref.watch(authenticationStateProvider);
     _languagePreferences = ref.watch(languagePreferencesProvider);
     _translateService = ref.watch(translateServiceProvider);
-    _twitterApiV2 = ref.watch(twitterApiV2Provider);
-    final twitterApiV1 = ref.watch(twitterApiV1Provider);
+    final twitterApiV1 = ref.watch(blueskyProvider);
 
-    final responses = await Future.wait([
+    return Future(() => UserPageData(user: UserData(
+      id: 'actorData.data.did', 
+    name: 'actorData.data.displayName ?? ''',
+    handle: 'actorData.data.handle'
+    )));
+  }
+    /* final responses = await Future.wait([
       twitterApiV1.userService.usersShow(screenName: handle),
       // _twitterApiV2.users.lookupByName(
       //   username: handle,
@@ -290,4 +294,6 @@ extension on AsyncValue<UserPageData> {
       ),
     );
   }
+}
+*/
 }

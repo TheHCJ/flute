@@ -12,7 +12,7 @@ final mentionsTimelineProvider = StateNotifierProvider.autoDispose<
 
     return MentionsTimelineNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
     );
   },
   name: 'MentionsTimelineProvider',

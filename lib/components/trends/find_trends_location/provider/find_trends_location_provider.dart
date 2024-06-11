@@ -12,7 +12,7 @@ part 'find_trends_location_provider.freezed.dart';
 final findTrendsLocationProvider = StateNotifierProvider.autoDispose<
     FindTrendsLocationNotifier, FindTrendsLocationState>(
   (ref) => FindTrendsLocationNotifier(
-    twitterApi: ref.watch(twitterApiV1Provider),
+    bluesky: ref.watch(blueskyProvider),
   ),
   name: 'FindTrendsLocationProvider',
 );
@@ -20,11 +20,11 @@ final findTrendsLocationProvider = StateNotifierProvider.autoDispose<
 class FindTrendsLocationNotifier extends StateNotifier<FindTrendsLocationState>
     with LoggerMixin {
   FindTrendsLocationNotifier({
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
   })  : _twitterApi = twitterApi,
         super(const FindTrendsLocationState.initial());
 
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
 
   Future<void> search({
     required String latitude,

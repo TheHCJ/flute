@@ -17,7 +17,7 @@ final tweetProvider = StateNotifierProvider.autoDispose
 
     return TweetNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
       translateService: ref.watch(translateServiceProvider),
       messageService: ref.watch(messageServiceProvider),
       languagePreferences: ref.watch(languagePreferencesProvider),
@@ -28,19 +28,19 @@ final tweetProvider = StateNotifierProvider.autoDispose
 class TweetNotifier extends StateNotifier<LegacyTweetData?> with LoggerMixin {
   TweetNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
     required TranslateService translateService,
     required MessageService messageService,
     required LanguagePreferences languagePreferences,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         _translateService = translateService,
         _messageService = messageService,
         _languagePreferences = languagePreferences,
         super(null);
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
   final TranslateService _translateService;
   final MessageService _messageService;
   final LanguagePreferences _languagePreferences;
@@ -192,8 +192,8 @@ class TweetNotifier extends StateNotifier<LegacyTweetData?> with LoggerMixin {
     log.fine('deleting tweet');
 
     final result = await _twitterApi.tweetService
-        .destroy(id: tweet.id, trimUser: true)
-        .handleError((e, st) => twitterErrorHandler(_ref, e, st));
+        .destroy(id: tweet.id, trimUser: true);
+        //.handleError((e, st) => twitterErrorHandler(_ref, e, st));
 
     if (result != null) {
       _messageService.showText('tweet deleted');

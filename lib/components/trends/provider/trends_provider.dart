@@ -15,7 +15,7 @@ final trendsProvider = StateNotifierProvider.autoDispose<TrendsNotifier,
 
     return TrendsNotifier(
       ref: ref,
-      twitterApi: ref.watch(twitterApiV1Provider),
+      bluesky: ref.watch(blueskyProvider),
       userLocation: ref.watch(userTrendsLocationProvider),
     );
   },
@@ -26,17 +26,17 @@ class TrendsNotifier extends StateNotifier<AsyncValue<BuiltList<Trend>>>
     with LoggerMixin {
   TrendsNotifier({
     required Ref ref,
-    required TwitterApi twitterApi,
+    required dynamic bluesky,
     required TrendsLocationData userLocation,
   })  : _ref = ref,
-        _twitterApi = twitterApi,
+        _twitterApi = bluesky,
         _trendsLocationData = userLocation,
         super(const AsyncValue.loading()) {
     load();
   }
 
   final Ref _ref;
-  final TwitterApi _twitterApi;
+  final dynamic _twitterApi;
   final TrendsLocationData _trendsLocationData;
 
   Future<void> load() async {
@@ -54,8 +54,9 @@ class TrendsNotifier extends StateNotifier<AsyncValue<BuiltList<Trend>>>
                   (o1, o2) => (o2.tweetVolume ?? 0) - (o1.tweetVolume ?? 0),
                 ),
             );
-
-        return trends.toBuiltList();
+        
+        return Future(() => BuiltList());
+        //return trends.toBuiltList();
       },
     );
   }

@@ -2,6 +2,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flute/api/api.dart';
 
+/*
 final retweetersProvider =
     FutureProvider.autoDispose.family<BuiltList<UserData>, String>(
   (ref, tweetId) async {
@@ -18,3 +19,5 @@ final retweetersProvider =
   },
   name: 'RetweetersProvider',
 );
+*/
+final retweetsProvider = null;

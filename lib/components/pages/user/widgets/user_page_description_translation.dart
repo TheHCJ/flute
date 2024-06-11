@@ -78,7 +78,7 @@ class UserPageDescriptionTranslationButton extends ConsumerWidget {
       activeColor: harpyTheme.colors.translate,
       activate: () {
         HapticFeedback.lightImpact();
-        notifier.translateDescription(locale: Localizations.localeOf(context));
+        //notifier.translateDescription(locale: Localizations.localeOf(context));
       },
       deactivate: null,
     );
